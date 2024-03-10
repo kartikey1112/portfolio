@@ -144,7 +144,7 @@ const experiences = [
     company_name: "Innostax Tech LLC",
     icon: innostax,
     iconBg: "#ffffff",
-    date: "Jan 2022 - Jan 2023",
+    date: "Jan 2022 - Present",
     points: [
       "Started working on a new Project TripTava.com, a flight booking Application",
       "Integrated multiple providers i.e Amadeus and Travel Boutique India for flight booking ",
