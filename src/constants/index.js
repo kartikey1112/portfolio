@@ -19,8 +19,8 @@ import {
   innostax,
   postgres,
   java,
-  feathers,
   sql,
+  prisma,
   founder,
   ceo,
   cody
@@ -43,16 +43,16 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Engineer",
     icon: web,
   },
   {
-    title: "Problem solver",
-    icon: mobile,
+    title: "Full Stack Developer",
+    icon: backend,
   },
   {
-    title: "Team Player",
-    icon: backend,
+    title: "Problem Solver",
+    icon: mobile,
   },
   {
     title: "Quick Learner",
@@ -98,22 +98,21 @@ const technologies = [
     icon: postgres,
   },
   {
+    name: "Prisma",
+    icon: prisma,
+  },
+  {
     name: "Three JS",
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "feathers",
-    icon: feathers,
+    name: "SQL",
+    icon: sql,
   },
-  {
-    name:"sql",
-    icon:sql
-  },
-
 ];
 
 const experiences = [
@@ -122,37 +121,40 @@ const experiences = [
     company_name: "Coding Ninjas",
     icon: codingNinjas,
     iconBg: "#ffffff",
-    date: "Aug 2022 - December 2022",
+    date: "Aug 2022 - Dec 2022",
     points: [
-      "As a Teaching Assistant at Coding Ninjas for Data Structures and Algorithms in Java, I provided hands-on support to students, aiding in comprehension and practical implementation. Collaborating with instructors, I fostered an inclusive learning environment, nurturing students' growth and confidence. Guiding students through challenges and witnessing their progress was immensely fulfilling, enriching my own understanding and communication skills.",
+      "Mentored students through Data Structures and Algorithms in Java, providing hands-on support with comprehension and practical implementation.",
+      "Collaborated with instructors to foster an inclusive learning environment, guiding students through challenges and sharpening my own communication skills.",
     ],
   },
   {
-    title: "Associate software developer",
-    company_name: "Innostax Tech LLC",
+    title: "Software Development Engineer",
+    company_name: "Innostax Tech LLC (EasyGen)",
     icon: innostax,
     iconBg: "#ffffff",
-    date: "May 2023 - Nov 2023",
+    date: "May 2023 - July 2025",
     points: [
-      "Started by resolving minor bugs on a project TAVAjs through which user can create backend APIs by drag and drop",
-      "Implemented the logging functionality in the whole application using AWS cloudWatch ",
-      "Worked with backend team for major integrations like GCP and Swagger using Feathers JS framework ",
+      "Migrated frontend auth from Memberstack to Supabase Auth with OAuth 2.0, hardening the login flow and reducing third-party surface area.",
+      "Implemented secure Google sign-in and an OTP-based auth flow with Resend, covering the email-entry, verify, and resend states.",
+      "Refactored data fetching by replacing Next.js API route logic with React Query — gaining request de-duplication, caching, and reactive invalidation.",
+      "Developed a role-based onboarding flow with persistent client state, reducing drop-off by 20%.",
+      "Integrated multiple LLM providers behind typed Enums that cleanly separate text-generation vs. input-processing models in the UI layer.",
     ],
   },
   {
-    title: "SDE-1",
-    company_name: "Innostax Tech LLC",
-    icon: innostax,
+    title: "Senior Frontend Engineer",
+    company_name: "Caspr & Ghost Research",
+    icon: web,
     iconBg: "#ffffff",
-    date: "Jan 2024 - Present",
+    date: "Sept 2025 - Present",
     points: [
-      "Started working on a new Project TripTava.com, a flight booking Application",
-      "Integrated multiple providers i.e Amadeus and Travel Boutique India for flight booking ",
-      "Created Backend API's for fetching flights price, booking , seat selection, Cancellation & Refund",
-      "Integrated the multiple Backend API'S on frontend and created Admin dashboard for flight booking APP",
-      ],
+      "Built a resumable AI chat and report-generation experience over Server-Sent Events — streaming live AI deltas and structured report cards into a Redux Toolkit store with section-level shimmer skeletons.",
+      "Hardened the SSE pipeline with event-id replay, tiered exponential backoff, visibility-aware reconnects, and session recreation on 401/403 so runs survive reloads, sleep, and flaky networks.",
+      "Shipped multi-format report output (PDF, PPTX, HTML, Markdown, Visual Brief) with version-aware, idempotent generation and per-version state persisted to localStorage.",
+      "Owned the design system on shadcn/ui + Tailwind v4 + Radix and the Vite + Docker build pipeline with code-splitting and memory-tuned production builds.",
+      "At Ghost Research, led a full UI redesign, reworked SSR/structured data for AI-agent discoverability, and migrated checkout from Razorpay to Stripe.",
+    ],
   },
-  
 ];
 
 const testimonials = [

@@ -40,21 +40,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am Kartikey, a Software
- Development Engineer (SDE 1) at
- Innostax Tech LLC. My passion for
- coding began in Ut, where I pursued a
- Computer Science degree at
- Maharishi Dayanand University.Now
- at Innostax Tech, I leverage my
- technical expertise and
- problem-solving skills to contribute to
- building and maintaining innovative
- software solutions. I am constantly
- learning and adapting to new
- technologies, striving to excel in my
- role and contribute to the success of
- the team and the company
+        I'm Kartikey Bajpai, a Senior Frontend Engineer at Caspr & Ghost
+        Research, with a Computer Science degree from Maharishi Dayanand
+        University. I specialize in building fast, resilient web apps with
+        React, Next.js, and TypeScript — from real-time AI experiences over
+        Server-Sent Events and design systems on shadcn/ui + Tailwind, to
+        full-stack features backed by Node.js, Postgres, and Prisma. I care
+        deeply about reliability, clean UX, and shipping products that hold up
+        under flaky networks and real-world usage.
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

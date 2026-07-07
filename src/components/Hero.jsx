@@ -4,21 +4,6 @@ import { ComputersCanvas } from "./canvas";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  // Use a state to determine if the screen is mobile-sized
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  // Function to handle window resize
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768); // Adjust the width as per your breakpoint
-  };
-
-  // Set up event listener for window resize
-  React.useEffect(() => {
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -33,7 +18,8 @@ const Hero = () => {
             Hi, I'm <span className="text-[#915eff]">Kartikey</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I am a Full stack developer
+            Senior Frontend Engineer building fast, <br className="sm:block hidden" />
+            resilient web apps
           </p>
         </div>
       </div>
