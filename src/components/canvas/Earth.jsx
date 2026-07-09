@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Suspense } from "react";
@@ -94,20 +94,6 @@ const GlobeFallback = () => (
 );
 
 const EarthCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)");
-    setIsMobile(mq.matches);
-    const handler = (e) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  if (isMobile) {
-    return <GlobeFallback />;
-  }
-
   return (
     <CanvasErrorBoundary fallback={<GlobeFallback />}>
       <Canvas

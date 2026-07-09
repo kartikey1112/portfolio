@@ -83,7 +83,7 @@ const BallCanvas = ({ icon }) => {
   return (
     <CanvasErrorBoundary fallback={<IconFallback icon={icon} />}>
       <Canvas
-        frameloop="demand"
+        frameloop="always"
         dpr={[1, 1.5]}
         gl={{ antialias: false, preserveDrawingBuffer: false }}
       >

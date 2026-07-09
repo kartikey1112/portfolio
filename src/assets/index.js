@@ -17,13 +17,20 @@ import reactjs from "./tech/react.svg";
 import redux from "./tech/redux-original.svg";
 import tailwind from "./tech/tailwind-css.svg";
 import threejs from "./tech/brand-threejs.svg";
-import java from "./tech/java-original.svg"
-import prisma from "./tech/prisma.svg"
-import feathers from "./tech/feathers.svg"
-import AWS from "./tech/aws.svg"
-import GCP from "./tech/gcp-color.svg"
-import postgres from "./tech/postgresql.svg"
-import sql from "./tech/sql.svg"
+import java from "./tech/java-original.svg";
+import prisma from "./tech/prisma.svg";
+import feathers from "./tech/feathers.svg";
+import AWS from "./tech/aws.svg";
+import GCP from "./tech/gcp-color.svg";
+import postgres from "./tech/postgresql.svg";
+import sql from "./tech/sql.svg";
+import typescript from "./tech/typescript.svg";
+import nextjs from "./tech/nextjs.svg";
+import mongodb from "./tech/mongodb.svg";
+import expressjs from "./tech/expressjs.svg";
+import graphql from "./tech/graphql.svg";
+import docker from "./tech/docker.svg";
+import bootstrap from "./tech/bootstrap.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -76,4 +83,11 @@ export {
   ceo,
   founder,
   cody,
+  typescript,
+  nextjs,
+  mongodb,
+  expressjs,
+  graphql,
+  docker,
+  bootstrap,
 };

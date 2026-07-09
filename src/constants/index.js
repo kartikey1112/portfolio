@@ -21,6 +21,13 @@ import {
   java,
   sql,
   prisma,
+  typescript,
+  nextjs,
+  mongodb,
+  expressjs,
+  graphql,
+  docker,
+  bootstrap,
   founder,
   ceo,
   cody
@@ -61,58 +68,23 @@ const services = [
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "java",
-    icon: java,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "postgres",
-    icon: postgres,
-  },
-  {
-    name: "Prisma",
-    icon: prisma,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "Git",
-    icon: git,
-  },
-  {
-    name: "SQL",
-    icon: sql,
-  },
+  // Languages
+  { name: "JavaScript", icon: javascript },
+  { name: "TypeScript", icon: typescript },
+  // Frontend
+  { name: "React JS", icon: reactjs },
+  { name: "Next.js", icon: nextjs },
+  { name: "Redux", icon: redux },
+  { name: "Bootstrap", icon: bootstrap },
+  // Backend & APIs
+  { name: "Node JS", icon: nodejs },
+  { name: "Express.js", icon: expressjs },
+  { name: "GraphQL", icon: graphql },
+  // Databases
+  { name: "PostgreSQL", icon: postgres },
+  { name: "MongoDB", icon: mongodb },
+  // Tools
+  { name: "Git", icon: git },
 ];
 
 const experiences = [
@@ -186,67 +158,68 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Caspr — AI Research Platform",
+    role: "Senior Frontend Engineer",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Built a resumable AI chat and report-generation experience over Server-Sent Events. Streamed live AI deltas into a Redux Toolkit store with section-level shimmer skeletons. Hardened the SSE pipeline with event-id replay, tiered exponential backoff, and visibility-aware reconnects. Shipped multi-format report output (PDF, PPTX, HTML, Markdown) with version-aware, idempotent generation.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "React", color: "#61dafb", bg: "rgba(97,218,251,0.08)" },
+      { name: "Redux", color: "#764abc", bg: "rgba(118,74,188,0.08)" },
+      { name: "TypeScript", color: "#3178c6", bg: "rgba(49,120,198,0.08)" },
+      { name: "SSE", color: "#00cea8", bg: "rgba(0,206,168,0.08)" },
+      { name: "Tailwind v4", color: "#38bdf8", bg: "rgba(56,189,248,0.08)" },
+      { name: "Docker", color: "#2496ed", bg: "rgba(36,150,237,0.08)" },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    gradient: "linear-gradient(135deg, #1a0533 0%, #3b0764 50%, #1e1b4b 100%)",
+    live_link: null,
+    source_code_link: null,
   },
   {
-    name: "Job IT",
+    name: "Ghost Research — Report App",
+    role: "Senior Frontend Engineer",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Led a full UI redesign of the research-report app. Reworked SSR markup and structured data so AI agents can reliably discover and consume reports. Migrated checkout from Razorpay to Stripe with full webhook-driven UI states and post-purchase access flows.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "Next.js", color: "#e2e8f0", bg: "rgba(226,232,240,0.06)" },
+      { name: "Stripe", color: "#635bff", bg: "rgba(99,91,255,0.08)" },
+      { name: "SSR", color: "#00cea8", bg: "rgba(0,206,168,0.08)" },
+      { name: "SEO", color: "#f59e0b", bg: "rgba(245,158,11,0.08)" },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    gradient: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0c2340 100%)",
+    live_link: null,
+    source_code_link: null,
   },
   {
-    name: "Trip Guide",
+    name: "TripTava — Flight Booking",
+    role: "SDE-1 · Innostax",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Full-stack flight booking platform integrating multiple GDS providers (Amadeus and Travel Boutique India). Built backend APIs for flight search, pricing, seat selection, booking, cancellation and refund. Developed the frontend booking flow and an admin dashboard for operations.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "React", color: "#61dafb", bg: "rgba(97,218,251,0.08)" },
+      { name: "Node.js", color: "#68a063", bg: "rgba(104,160,99,0.08)" },
+      { name: "Express", color: "#e2e8f0", bg: "rgba(226,232,240,0.06)" },
+      { name: "PostgreSQL", color: "#336791", bg: "rgba(51,103,145,0.08)" },
+      { name: "Amadeus API", color: "#ff6b6b", bg: "rgba(255,107,107,0.08)" },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    gradient: "linear-gradient(135deg, #042f2e 0%, #065f46 50%, #064e3b 100%)",
+    live_link: "https://triptava.com",
+    source_code_link: null,
+  },
+  {
+    name: "EasyGen — AI Content Platform",
+    role: "SDE · Innostax",
+    description:
+      "Migrated frontend auth from Memberstack to Supabase Auth with OAuth 2.0 and Google sign-in. Built OTP-based auth flow and replaced Next.js API route fetching with React Query for caching and de-duplication. Developed role-based onboarding that reduced drop-off by 20%. Integrated multiple LLM providers behind typed Enums.",
+    tags: [
+      { name: "Next.js", color: "#e2e8f0", bg: "rgba(226,232,240,0.06)" },
+      { name: "Supabase", color: "#3ecf8e", bg: "rgba(62,207,142,0.08)" },
+      { name: "React Query", color: "#ff4154", bg: "rgba(255,65,84,0.08)" },
+      { name: "TypeScript", color: "#3178c6", bg: "rgba(49,120,198,0.08)" },
+      { name: "LLMs", color: "#f59e0b", bg: "rgba(245,158,11,0.08)" },
+    ],
+    gradient: "linear-gradient(135deg, #1c1917 0%, #44403c 50%, #292524 100%)",
+    live_link: null,
+    source_code_link: "https://github.com/kartikey1112",
   },
 ];
 
