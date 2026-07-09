@@ -3,6 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Preload, OrbitControls, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import CanvasErrorBoundary from "./CanvasErrorBoundary";
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
@@ -44,14 +45,69 @@ const isWebGLAvailable = () => {
   }
 };
 
-const Fallback = () => (
-  <div className="w-full h-full flex items-center justify-center px-6 text-center">
-    <p className="text-secondary text-[15px] max-w-[280px] leading-[24px]">
-      Interactive 3D scene isn&apos;t supported on this device — but the rest of
-      the portfolio works great. Enjoy exploring!
-    </p>
+/* ─── CSS-only animated terminal shown when 3D can't load ─────────────── */
+const terminalLines = [
+  "$ npx create-next-app@latest",
+  "$ npm install @shadcn/ui tailwindcss",
+  "$ git commit -m 'feat: add SSE streaming'",
+  "$ docker build -t portfolio .",
+  "$ npm run build  ✓ built in 5.1s",
+];
+
+const TerminalFallback = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div
+      style={{
+        background: "#1a1a2e",
+        border: "1px solid #4a4a6a",
+        borderRadius: "12px",
+        padding: "20px 24px",
+        width: "min(380px, 90%)",
+        fontFamily: "'Courier New', monospace",
+      }}
+    >
+      {/* Title bar */}
+      <div style={{ display: "flex", gap: "6px", marginBottom: "16px" }}>
+        <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f57", display: "inline-block" }} />
+        <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#febc2e", display: "inline-block" }} />
+        <span style={{ width: 12, height: 12, borderRadius: "50%", background: "#28c840", display: "inline-block" }} />
+      </div>
+      {/* Animated lines */}
+      {terminalLines.map((line, i) => (
+        <p
+          key={i}
+          style={{
+            color: i === terminalLines.length - 1 ? "#28c840" : "#aaa8c0",
+            fontSize: "12px",
+            margin: "6px 0",
+            opacity: 0,
+            animation: `termFadeIn 0.4s ease forwards`,
+            animationDelay: `${i * 0.6}s`,
+          }}
+        >
+          {line}
+        </p>
+      ))}
+      {/* Blinking cursor */}
+      <span
+        style={{
+          display: "inline-block",
+          width: 8,
+          height: 14,
+          background: "#915eff",
+          marginTop: 8,
+          animation: "termBlink 1s step-end infinite",
+        }}
+      />
+    </div>
+    <style>{`
+      @keyframes termFadeIn { to { opacity: 1; } }
+      @keyframes termBlink  { 50% { opacity: 0; } }
+    `}</style>
   </div>
 );
+
+const Fallback = () => <TerminalFallback />;
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -74,11 +130,12 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-  if (!webglOk) {
+  if (isMobile || !webglOk) {
     return <Fallback />;
   }
 
   return (
+    <CanvasErrorBoundary fallback={<Fallback />}>
     <Canvas
       frameloop="always"
       shadows
@@ -110,6 +167,7 @@ const ComputersCanvas = () => {
       </Suspense>
       <Preload all />
     </Canvas>
+    </CanvasErrorBoundary>
   );
 };
 
